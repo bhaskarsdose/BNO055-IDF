@@ -1,22 +1,12 @@
-# I2C Self-Test Example
+# I2C BNO055 Example
 
 (See the README.md file in the upper level 'examples' directory for more information about examples.)
-
-## Overview
-
-This example demonstrates basic usage of I2C driver by running two tasks on I2C bus:
-
-1. Read external I2C sensor, here we take the BH1750 ambient light sensor (GY-30 module) for an example.
-2. Use one of ESP32’s I2C port (master mode) to read and write another I2C port (slave mode) in ESP32.
-
-If you have a new I2C application to go (for example, read the temperature data from external sensor with I2C interface), try this as a basic template, then add your own code.
 
 ## How to use example
 
 ### Hardware Required
 
-To run this example, you should have one ESP32 dev board (e.g. ESP32-WROVER Kit) or ESP32 core board (e.g. ESP32-DevKitC). Optionally, you can also connect an external sensor, here we choose the BH1750 just for an example. BH1750 is a digital ambient light sensor, for more information about it, you can read the [PDF](http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1721fvc-e.pdf) of this sensor.
-
+To run this example, you should have one ESP32 dev board (e.g. ESP32-WROVER Kit) or ESP32 core board (e.g. ESP32-DevKitC). Optionally, you can also connect an external sensor, here we choose the BNO055.
 #### Pin Assignment:
 
 **Note:** The following pin assignments are used by default, yout can change these  in the `menuconfig` .
@@ -24,20 +14,14 @@ To run this example, you should have one ESP32 dev board (e.g. ESP32-WROVER Kit)
 |                  | SDA    | SCL    |
 | ---------------- | ------ | ------ |
 | ESP32 I2C Master | GPIO18 | GPIO19 |
-| ESP32 I2C Slave  | GPIO4  | GPIO5  |
-| BH1750 Sensor    | SDA    | SCL    |
+| BNO055 Sensor    | SDA    | SCL    |
 
-- slave:
-  - GPIO4 is assigned as the data signal of I2C slave port
-  - GPIO5 is assigned as the clock signal of I2C slave port
 - master:
   - GPIO18 is assigned as the data signal of I2C master port
   - GPIO19 is assigned as the clock signal of I2C master port
 
 - Connection:
-  - connect GPIO18 with GPIO4
-  - connect GPIO19 with GPIO5
-  - connect SDA/SCL of BH1750 sensor with GPIO18/GPIO19
+   - connect SDA/SCL of bno055 sensor with GPIO18/GPIO19
 
 **Note: ** There’s no need to add an external pull-up resistors for SDA/SCL pin, because the driver will enable the internal pull-up resistors.
 
@@ -46,9 +30,6 @@ To run this example, you should have one ESP32 dev board (e.g. ESP32-WROVER Kit)
 Open the project configuration menu (`idf.py menuconfig`). Then go into `Example Configuration` menu.
 
 - In the `I2C Master` submenu, you can set the pin number of SDA/SCL according to your board. Also you can modify the I2C port number and freauency of the master.
-- In the `I2C Slave` submenu, you can set the pin number of SDA/SCL according to your board. Also you can modify the I2C port number and address of the slave.
-- In the `BH1750 Sensor` submenu, you can choose the slave address of BH1750 accroding to the pin level of ADDR pin (if the pin level of ADDR is low then the address is `0x23`, otherwise it is `0x5c`). Here you can also control the operation mode of BH1750, each mode has a different resolution and measurement time. For example, in the `One Time L-Resolution` mode, the resolution is 4 Lux and measurement time is typically 16ms (higher resolution means longer measurement time). For more information, you can consult the datasheet of BH1750.
-
 
 ### Build and Flash
 
@@ -145,8 +126,3 @@ TASK[0]  MASTER WRITE TO SLAVE
 7a 7b 7c 7d 7e 7f 80 81 82 83 84 85 86 87 88 89 
 ```
 
-## Troubleshooting
-
-- BH1750 has two I2C address, which is decided by the voltage level of `ADDR` pin at start up. Make sure to check your schemetic before run this example.
-
-(For any technical queries, please open an [issue](https://github.com/espressif/esp-idf/issues) on GitHub. We will get back to you as soon as possible.)
