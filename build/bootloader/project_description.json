@@ -1,0 +1,18 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader/subproject",
+    "build_dir":          "C:/Users/Bhaskar/esp-idf-v4.0.1/ESP32/i2c_try1/build/bootloader",
+    "config_file":        "C:/Users/Bhaskar/esp-idf-v4.0.1/ESP32/i2c_try1/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v4.0.1-dirty",
+    "phy_data_partition": "",
+    "monitor_baud" : "115200",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "C:/Users/Bhaskar/esp-idf-v4.0.1/components/efuse/Kconfig;C:/Users/Bhaskar/esp-idf-v4.0.1/components/esp32/Kconfig;C:/Users/Bhaskar/esp-idf-v4.0.1/components/esp_common/Kconfig;C:/Users/Bhaskar/esp-idf-v4.0.1/components/log/Kconfig;C:/Users/Bhaskar/esp-idf-v4.0.1/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader/Kconfig.projbuild;C:/Users/Bhaskar/esp-idf-v4.0.1/components/esptool_py/Kconfig.projbuild;C:/Users/Bhaskar/esp-idf-v4.0.1/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_rom", "esptool_py", "log", "main", "micro-ecc", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader_support", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/efuse", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/esp32", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/esp_common", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/esp_rom", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/esptool_py", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/log", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader/subproject/main", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/bootloader/subproject/components/micro-ecc", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/partition_table", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/soc", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/spi_flash", "C:/Users/Bhaskar/esp-idf-v4.0.1/components/xtensa", "" ]
+}
